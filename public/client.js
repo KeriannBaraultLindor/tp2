@@ -6,8 +6,8 @@ for (var i = 0; i < elmModifier.length; i++) {
 
 function modifier(){
 	//console.log(this.parentNode.parentNode.tagName);
-	var parent = this.parentNode.parentNode;
-	var elmTd = parent.getElementsByTagName("td");
+	var parent = this.parentNode.parentNode;//on va chercher le parent du bounton modifier en question
+	var elmTd = parent.getElementsByTagName("td");//on va chercher les td de la bonne ligne, en fonction du tr en question
 	xhr = new XMLHttpRequest();
 	xhr.open('POST', "modifier", true);
 	data = { 

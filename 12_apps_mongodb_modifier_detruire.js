@@ -31,12 +31,6 @@ app.get('/',  (req, res) => {
     })
 })
 
-//ROUTE - affiche le formulaire qui permet de saisir le prenom,nom,telephone,ville,code postal
-/*app.get('/formulaire',  (req, res) => {
-   console.log('la route  get / = ' + req.url)
-   res.sendFile(__dirname + "/public/html/forme.htm")
-})*/
-
 //ROUTE - permet d'enregistrer les données entrées dans la base de données
 app.post('/adresse',  (req, res) => {
   db.collection('adresse').save(req.body, (err, result) => {
@@ -61,7 +55,7 @@ if (err) return console.log(err)
 app.post('/modifier', (req, res) => {
 var id = req.params.id
  //console.log(id)
- console.log("voici req.body.nom: " + req.body.nom)
+ console.log("voici req.body.nom: " + req.body.nom) //console qui permet de vérifier si le bon nom est récupéré
  db.collection('adresse').findOneAndUpdate({"_id": ObjectID(req.body._id)}, {"prenom" : req.body.prenom, "nom" : req.body.nom, "telephone" : req.body.telephone}, (err, resultat) => {
 
 if (err) return console.log(err)
