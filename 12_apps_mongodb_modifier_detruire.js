@@ -9,7 +9,6 @@ app.use(bodyParser.json())
 app.use(express.static('public'))  // pour utiliser le dossier public
 
 var db // variable qui contiendra le lien sur la BD
-
 //127.0.0.1 est équivalent à localhost
 MongoClient.connect('mongodb://127.0.0.1:27017/carnet-adresse', (err, database) => {
   if (err) return console.log(err)
