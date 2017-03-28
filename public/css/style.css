@@ -1,0 +1,22 @@
+body{
+	font-family: arial;
+}
+
+form{
+	display: table-caption;
+}
+
+button{
+	margin: 0 auto;
+	width: 173px;
+}
+
+ul{
+	list-style: none;
+	padding: 0px;
+}
+
+li:nth-child(odd){
+	background-color: aliceblue;
+	margin-bottom: 10px;
+}
