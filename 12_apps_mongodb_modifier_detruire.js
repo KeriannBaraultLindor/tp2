@@ -18,10 +18,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017/carnet-adresse', (err, database) 
   })
 })
 
-
-
-
-
 app.get('/',  (req, res) => {
    console.log('la route route get / = ' + req.url)
  
@@ -67,9 +63,24 @@ app.post('/modifier', (req, res) => {
 var id = req.params.id
  //console.log(id)
  console.log(req.body)
- db.collection('adresse').findOneAndUpdate({"_id": ObjectID(req.body._id)}, {"prenom" : req.body.prenom, "nom" : req.body.nom, "telephone" : req.body.telephone, "ville" : req.body.ville, "codepostal" : req.body.codepostal}, (err, resultat) => {
+ db.collection('adresse').findOneAndUpdate({"_id": ObjectID(req.body._id)}, {"prenom" : req.body.prenom, "nom" : req.body.nom, "telephone" : req.body.telephone}, (err, resultat) => {
 
 if (err) return console.log(err)
  res.redirect('/')  // redirige vers la route qui affiche la collection
  })
 })
+/*
+trier: une seule route 
+var trie={}
+trie[colonne]=
+cursor sort(trie)
+
+
+formulaire.submit
+dans client.js:
+
+function(sauver) + ajouter + modifier
+ajouter = elmAjouter.removeEventListener('click',ajouter)
+elmLigne = document.createElement('div')
+
+*/
