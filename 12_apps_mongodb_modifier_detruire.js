@@ -5,6 +5,7 @@ const app = express();
 const ObjectID = require('mongodb').ObjectID;
 app.set('view engine', 'ejs'); // générateur de template «ejs»
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 app.use(express.static('public'))  // pour utiliser le dossier public
 
 var db // variable qui contiendra le lien sur la BD
@@ -60,7 +61,7 @@ if (err) return console.log(err)
 app.post('/modifier', (req, res) => {
 var id = req.params.id
  //console.log(id)
- console.log(req.body)
+ console.log("voici req.body.nom: " + req.body.nom)
  db.collection('adresse').findOneAndUpdate({"_id": ObjectID(req.body._id)}, {"prenom" : req.body.prenom, "nom" : req.body.nom, "telephone" : req.body.telephone}, (err, resultat) => {
 
 if (err) return console.log(err)
