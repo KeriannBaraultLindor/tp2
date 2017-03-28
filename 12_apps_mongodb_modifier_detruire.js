@@ -30,13 +30,13 @@ app.get('/',  (req, res) => {
     })
 })
 
-//affiche le formulaire qui permet de saisir le prenom,nom,telephone,ville,code postal
-app.get('/formulaire',  (req, res) => {
+//ROUTE - affiche le formulaire qui permet de saisir le prenom,nom,telephone,ville,code postal
+/*app.get('/formulaire',  (req, res) => {
    console.log('la route  get / = ' + req.url)
    res.sendFile(__dirname + "/public/html/forme.htm")
-})
+})*/
 
-//permet d'enregistrer les données entrées dans la base de données
+//ROUTE - permet d'enregistrer les données entrées dans la base de données
 app.post('/adresse',  (req, res) => {
   db.collection('adresse').save(req.body, (err, result) => {
       if (err) return console.log(err)
@@ -45,7 +45,7 @@ app.post('/adresse',  (req, res) => {
     })
 })
 
-//détruire une entrée
+//ROUTE - détruire une entrée
 app.get('/detruire/:id', (req, res) => {
  var id = req.params.id
  console.log(id)
@@ -56,7 +56,7 @@ if (err) return console.log(err)
  })
 })
 
-//modifier une entrée
+//ROUTE - modifier une entrée
 app.post('/modifier', (req, res) => {
 var id = req.params.id
  //console.log(id)

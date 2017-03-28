@@ -21,3 +21,7 @@ button{
   border: 1px dotted #aaa;
   padding: 10px;
 }
+
+.modifier{
+  cursor: pointer;
+}

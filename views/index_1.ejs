@@ -7,8 +7,8 @@
 </head>
 <body>
   Carnet d'adresse:
-  <form action="/adresse" method="POST">
-    <button type="submit">Ajouter</button>
+  <form action="/adresse" method="POST"><!--AFFICHAGE du tableau-->
+    <button type="submit">Ajouter</button><!--Bouton pour ajouter une nouvelle entrée vide-->
     <table class="tableau" action="/adresse" method="POST">
         <tr>
           <td>Nom</td>
@@ -18,18 +18,19 @@
           <td></td>
           <td></td>
         </tr>
+      <!--Boucle qui permet d'afficher toutes les rangées du tableau-->
       <% for(var i=0; i<adresse.length; i++) {%>
         <tr class="client">
           <td contenteditable="true"><%= adresse[i].nom %></td>
           <td contenteditable="true"><%= adresse[i].prenom %></td>
           <td contenteditable="true"><%= adresse[i].telephone %></td>
           <td contenteditable="true"><%= adresse[i]._id %></td>
-          <td><div class="modifier">Modifier</div></td>
-          <td><a <%= "href=/detruire/"+ adresse[i]._id %> >Détruire</a></td>
+          <td><div class="modifier">Modifier</div></td><!--Bouton pour modifier une entrée-->
+          <td><a <%= "href=/detruire/"+ adresse[i]._id %> >Détruire</a></td><!--Bouton pour détruire une entrée-->
         </tr>
       <% } %>
     </table>
   </form>
-  <script type="text/javascript" src="/client.js"></script>
+  <script type="text/javascript" src="/client.js"></script><!--Appel du script qui gère AJAX-->
 </body>
 </html>
