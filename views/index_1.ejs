@@ -24,12 +24,12 @@
           <td contenteditable="true"><%= adresse[i].prenom %></td>
           <td contenteditable="true"><%= adresse[i].telephone %></td>
           <td contenteditable="true"><%= adresse[i]._id %></td>
-          <td><div id="modifier">Modifier</div></td>
+          <td><div class="modifier">Modifier</div></td>
           <td><a <%= "href=/detruire/"+ adresse[i]._id %> >Détruire</a></td>
         </tr>
       <% } %>
     </table>
   </form>
-
+  <script type="text/javascript" src="/client.js"></script>
 </body>
 </html>

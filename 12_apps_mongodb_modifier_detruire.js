@@ -27,9 +27,7 @@ app.get('/',  (req, res) => {
     // affiche le contenu de la BD
     res.render('index_1.ejs', {adresse: resultat})//récupère les données du ul adresse
 
-    }) 
-    
-
+    })
 })
 
 //affiche le formulaire qui permet de saisir le prenom,nom,telephone,ville,code postal
@@ -69,18 +67,3 @@ if (err) return console.log(err)
  res.redirect('/')  // redirige vers la route qui affiche la collection
  })
 })
-/*
-trier: une seule route 
-var trie={}
-trie[colonne]=
-cursor sort(trie)
-
-
-formulaire.submit
-dans client.js:
-
-function(sauver) + ajouter + modifier
-ajouter = elmAjouter.removeEventListener('click',ajouter)
-elmLigne = document.createElement('div')
-
-*/

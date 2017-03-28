@@ -1,15 +1,20 @@
 //AJAX
-xhr = new XMLHttpRequest();
-xhr.open('POST', "modifier", true);
-data = { 
- "modif":{
- "nom" : elmLigneDiv[0].innerHTML,
- "prenom" : elmLigneDiv[1].innerHTML,
- "telephone" : elmLigneDiv[2].innerHTML
- },
- "_id" : elmLigneDiv[3].innerHTML 
- }
+console.log("testttt");
+elmModifier = document.getElementsByClassName("modifier");
+
+function modifier(){
+	console.log("test");
+	xhr = new XMLHttpRequest();
+	xhr.open('POST', "modifier", true);
+	data = { 
+	 "modif":{
+	 "prenom" : elmLigneDiv[0].innerHTML,
+	 "nom" : elmLigneDiv[1].innerHTML,
+	 "telephone" : elmLigneDiv[2].innerHTML,
+	 "_id" : elmLigneDiv[3].innerHTML 
+	 }
 }
+
 sData = JSON.stringify(data);
 xhr.setRequestHeader('Content-type', 'application/json');
 xhr.send(sData);
@@ -26,4 +31,8 @@ function traiterRequest(e){
 	 elmLigne.style.backgroundColor = "#0f0"
 
 	}
- }
+}
+
+for (var i = 0; i < elmModifier.length; i++) {
+    elmModifier[i].addEventListener('click', modifier, false);
+}
